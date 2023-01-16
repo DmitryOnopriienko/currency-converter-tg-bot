@@ -26,8 +26,6 @@ class Privat24Currency:
 
     @buy_price.setter
     def buy_price(self, value):
-        # if not isinstance(value, int | float):
-        #     raise TypeError("buy price must be a float or int")
         self._buy_price = float(value)
 
     @property
@@ -36,8 +34,6 @@ class Privat24Currency:
 
     @sale_price.setter
     def sale_price(self, value):
-        # if not isinstance(value, int | float):
-        #     raise TypeError("sale price must be a float or int")
         self._sale_price = float(value)
 
 

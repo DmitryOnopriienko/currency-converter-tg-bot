@@ -28,12 +28,6 @@ def send_welcome(message):
     bot.register_next_step_handler(message, action_chooser)
 
 
-# @bot.message_handler(commands=["help"])
-# def send_help(message):
-#     response = "Press /start and choose the option you want"
-#     bot.reply_to(message, response)
-
-
 def action_chooser(message):
     if message.text == "Convert UAH to ...":
         bot.send_message(message.chat.id, "Choose the currency", reply_markup=keyboard_currency_chooser)
@@ -60,16 +54,6 @@ def currency_price_privat24(message):
             return
         bot.reply_to(message, str(currency))
         bot.register_next_step_handler(message, currency_price_privat24)
-
-    # elif message.text not in currencies:
-    #     bot.send_message(message.chat.id, "Choose the correct option")
-    #     bot.register_next_step_handler(message, currency_chooser)
-    # else:
-    #     resp = requests.get(config.privat_bank_api).json()
-    #     print(resp)
-    #     reply = currency_price_message_former(resp, message.text)
-    #     bot.reply_to(message, reply)
-    #     bot.register_next_step_handler(message, currency_chooser)
 
 
 def parse_privat24_currency(ccy):
